@@ -37,4 +37,31 @@ func main() {
   arr2 := make([]int, len(arr1))
   copy(arr2, arr1)
   fmt.Println(arr2) // [1 2 3]
+
+  // map
+  var numbers1 = make(map[string]int)
+  numbers1["one"] = 1
+  numbers1["two"] = 2
+  numbers1["three"] = 3
+  fmt.Println(numbers1) // map[one:1 two:2 three:3]
+  fmt.Println(numbers1) // map[two:2 three:3 one:1]
+  fmt.Println(numbers1["two"]) // 2
+  fmt.Println(len(numbers1)) // 3
+
+  rating := map[string]int {"C": 5, "Go": 4, "Python": 3}
+  cRating, ok := rating["C"]
+  fmt.Println(cRating) // 5
+  fmt.Println(ok) // true
+  phpRating, ok := rating["Php"]
+  fmt.Println(phpRating) // 0
+  fmt.Println(ok) // false
+  delete(rating, "C")
+  fmt.Println(rating) // map[Go:4 Python:3]
+
+  m1 := make(map[string]string)
+  m1["hello"] = "hello"
+  fmt.Println(m1) // map[hello:hello]
+  m2 := m1
+  m2["hello"] = "olleh"
+  fmt.Println(m1) // map[hello:olleh]
 }
