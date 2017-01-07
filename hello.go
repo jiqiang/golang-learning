@@ -64,4 +64,42 @@ func main() {
   m2 := m1
   m2["hello"] = "olleh"
   fmt.Println(m1) // map[hello:olleh]
+
+  // if
+  if x := 10; x > 9 {
+    fmt.Println("x is greater than 9")
+  } else if x == 9 {
+    fmt.Println("x is equal to 9")
+  } else {
+    fmt.Println("x is not greater than 9")
+  }
+
+  // for
+  sum := 0
+  for index := 0; index < 10; index++ {
+    sum += index
+  }
+  fmt.Println("sum is equal to ", sum)
+
+  sum2 := 1
+  for sum2 < 10 {
+    sum2 += sum2
+  }
+  fmt.Println("sum is equal to ", sum2)
+
+  // switch
+  i := 10
+  switch i {
+    case 1:
+      fmt.Println("i is 1")
+    case 2, 3, 4:
+      fmt.Println("i is 2 or 3 or 4")
+    case 10:
+      fmt.Println("i is 10")
+      fallthrough
+    case 11:
+      fmt.Println("i is 11")
+    default:
+      fmt.Println("i is unknown")
+  }
 }
