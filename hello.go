@@ -13,6 +13,15 @@ func SumAndProduct(a, b int) (int, int) {
   return a + b, a * b
 }
 
+func sum1(nums ...int) {
+  fmt.Print(nums, " ")
+  total := 0
+  for _, num := range nums {
+    total += num
+  }
+  fmt.Println(total)
+}
+
 func main() {
   fmt.Println("Hello, world!")
 
@@ -132,4 +141,8 @@ func main() {
 
   fmt.Printf("%d + %d = %d\n", x1, y1, xPLUSy)
   fmt.Printf("%d * %d = %d\n", x1, y1, xTIMESy)
+
+  // variadic function
+  sum1(1, 2)
+  sum1(3, 4, 5)
 }
