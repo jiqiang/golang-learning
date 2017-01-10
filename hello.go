@@ -22,6 +22,16 @@ func sum1(nums ...int) {
   fmt.Println(total)
 }
 
+func add1(a int) int {
+  a = a + 1
+  return a
+}
+
+func add2(a *int) int {
+  *a = *a + 1
+  return *a
+}
+
 func main() {
   fmt.Println("Hello, world!")
 
@@ -145,4 +155,14 @@ func main() {
   // variadic function
   sum1(1, 2)
   sum1(3, 4, 5)
+
+  // pass by value and pointer
+  x2 := 3
+  y2 := add1(x2)
+  fmt.Println(x2)
+  fmt.Println(y2)
+  x3 := 3
+  y3 := add2(&x3)
+  fmt.Println(x3)
+  fmt.Println(y3)
 }
