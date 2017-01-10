@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+func max(a, b int) int {
+  if a > b {
+    return a
+  }
+  return b
+}
+
+func SumAndProduct(a, b int) (int, int) {
+  return a + b, a * b
+}
+
 func main() {
   fmt.Println("Hello, world!")
 
@@ -102,4 +113,23 @@ func main() {
     default:
       fmt.Println("i is unknown")
   }
+
+  // single and multiple function returns
+  x := 3
+  y := 4
+  z := 5
+
+  max_xy := max(x, y)
+  max_xz := max(x, z)
+
+  fmt.Printf("max(%d, %d) = %d\n", x, y, max_xy)
+  fmt.Printf("max(%d, %d) = %d\n", x, z, max_xz)
+
+  x1 := 3
+  y1 := 4
+
+  xPLUSy, xTIMESy := SumAndProduct(x1, y1)
+
+  fmt.Printf("%d + %d = %d\n", x1, y1, xPLUSy)
+  fmt.Printf("%d * %d = %d\n", x1, y1, xTIMESy)
 }
