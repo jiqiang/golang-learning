@@ -32,6 +32,32 @@ func add2(a *int) int {
   return *a
 }
 
+func isOdd(integer int) bool {
+  if integer % 2 == 0 {
+    return false
+  }
+  return true
+}
+
+func isEven(integer int) bool {
+  if integer % 2 == 0 {
+    return true
+  }
+  return false
+}
+
+type testInt func(int) bool
+
+func filter(slice []int, f testInt) []int {
+  var result []int
+  for _, value := range slice {
+    if f(value) {
+      result = append(result, value)
+    }
+  }
+  return result
+}
+
 func main() {
   fmt.Println("Hello, world!")
 
@@ -165,4 +191,16 @@ func main() {
   y3 := add2(&x3)
   fmt.Println(x3)
   fmt.Println(y3)
+
+  // defer
+  for i := 0; i < 5; i++ {
+    defer fmt.Printf("%d ", i)
+  }
+
+  // function as type
+  slice := []int {1,2,3,4,5,6,7}
+  odd := filter(slice, isOdd)
+  fmt.Println(odd)
+  even := filter(slice, isEven)
+  fmt.Println(even)
 }
