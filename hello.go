@@ -58,6 +58,11 @@ func filter(slice []int, f testInt) []int {
   return result
 }
 
+type person struct {
+  name string
+  age int
+}
+
 func main() {
   fmt.Println("Hello, world!")
 
@@ -203,4 +208,11 @@ func main() {
   fmt.Println(odd)
   even := filter(slice, isEven)
   fmt.Println(even)
+
+  // struct
+  var P person
+  P.name = "Glenn"
+  P.age = 40
+
+  fmt.Println(P)
 }
