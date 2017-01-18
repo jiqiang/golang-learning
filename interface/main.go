@@ -20,25 +20,21 @@ type Employee struct {
     money float32
 }
 
-func (h *Human) SayHi() {
+func (h Human) SayHi() {
     fmt.Printf("Hi, I am %s, you can call me on %s\n", h.name, h.phone)
 }
 
-func (h *Human) Sing(lyrics string) {
+func (h Human) Sing(lyrics string) {
     fmt.Println("La la, la la la, la la la la la ...", lyrics)
 }
 
-func (h *Human) Guzzle(beerStein string) {
+func (h Human) Guzzle(beerStein string) {
     fmt.Println("Guzzle Guzzle Guzzle...", beerStein)
 }
 
 // Employee overloads Sayhi
-func (e *Employee) SayHi() {
+func (e Employee) SayHi() {
     fmt.Printf("Hi, I am %s, I work at %s. Call me on %s\n", e.name, e.company, e.phone)
-}
-
-func (s *Student) SayHi() {
-    fmt.Printf("Hi, I am %s, I study at %s. Call me on %s\n", s.name, s.school, s.phone)
 }
 
 func (s *Student) BorrowMoney(amount float32) {
@@ -53,7 +49,7 @@ func (e *Employee) SpendSalary(amount float32) {
 type Men interface {
     SayHi()
     Sing(lyrics string)
-    //Guzzle(beerStein string)
+    Guzzle(beerStein string)
 }
 
 type YoundChap interface {
